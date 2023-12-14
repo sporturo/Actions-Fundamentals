@@ -48,7 +48,7 @@ jobs:
   Production:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
-    needs: Build
+    needs: [Test, Load-Test]
     environment: 
         name: Production
         url: https://writeabout.net
